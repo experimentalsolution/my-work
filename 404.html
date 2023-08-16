@@ -6,7 +6,20 @@
 </head>
 <body>
   <script>
-    window.location.replace('index.html');
+    // Extract the path from the URL
+    var path = window.location.pathname.replace(/\/+/, '');
+
+    // Define the routes you want to handle
+    var validRoutes = ['contact', 'blog', 'home', 'about']; // Add more routes if needed
+
+    // Check if the current path is a valid route
+    if (validRoutes.includes(path)) {
+      // Redirect to the index.html with the path appended
+      window.location.replace('index.html#' + path);
+    } else {
+      // Redirect to the default index.html
+      window.location.replace('index.html');
+    }
   </script>
 </body>
 </html>
